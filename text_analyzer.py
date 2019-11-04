@@ -1,10 +1,10 @@
-from typing import Any
+#from typing import Any
 
-print('Welcome in Text Analyzer\n')
+print('Welcome in Text Analyzer)
 print('=' * 40)
-print ('Author: Jaroslav Prejza\n')
+print ('Author: Jaroslav Prejza)
 print('=' * 40)
-data = {'bob': '123','ann': 'pass123','mike': 'password123','liz': 'pass123'}
+credentials = {'bob': '123','ann': 'pass123','mike': 'password123','liz': 'pass123'}
 
 username = input('Please enter username: \n')
 print()
@@ -12,16 +12,16 @@ password = input('Please enter password: \n')
 print()
 print('=' * 40)
 
-if username not in data:
+if username not in credentials:
     print('No user found')
     exit()
-elif data[username] != password:
+elif credentials[username] != password:
     print('permission denied')
     exit()
 else:
     print('permission allowed\n')
     print()
-print('OUR TEXTS:')
+print('OUR TEXTS:') #????
 
 
 text_1 = ('''Situated about 10 miles west of Kemmerer,
@@ -54,45 +54,46 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.''')
 
 
-your_choice = int(input('We have 3 texts to analyze, please choose 1, 2 or 3:\n'))
+choice = int(input('We have 3 texts to analyze, please choose 1, 2 or 3:\n'))
 print()
 
-
-if your_choice not in (1,2,3):
-    print('No such text')
+if choice not numeric:
+    print('Only numbers please')   
+elif choice not in ('1','2','3'):
+    print('No such number')
 else:
-    your_choice = int(your_choice)
+    choice = int(choice)
 
 print()
 
 print('statistics:')
 print()
 
-if your_choice is 1:
-    texts = text_1
+if choice is 1:
+    text = text_1
     print(text_1)
-elif your_choice is 2:
-    texts = text_2
+elif choice is 2:
+    text = text_2
     print(text_2)
-elif your_choice is 3:
-    texts = text_3
+elif choice is 3:
+    text = text_3
     print(text_3)
 else:
     print ('Invalid choice')
 
-analyzing = texts
-analyzing = analyzing.split()
+word_list = text
+word_list = word_list.split()
 
 
 
-#analyzing.split()
+#word_list.split()
 
 # capitals
 capitals = 0
 i = 0
 
-while i < len(analyzing):
-    if analyzing[i].istitle():
+while i < len(word_list):
+    if word_list[i].istitle():
         capitals += 1
         i += 1
     else:
@@ -103,8 +104,8 @@ while i < len(analyzing):
 uppers = 0
 i = 0
 
-while i < len(analyzing):
-    if analyzing[i].isupper() and not analyzing[i].isnumeric():
+while i < len(word_list):
+    if word_list[i].isupper():
         uppers += 1
         i += 1
     else:
@@ -115,8 +116,8 @@ while i < len(analyzing):
 lowers = 0
 i = 0
 
-while i < len(analyzing):
-    if analyzing[i].islower():
+while i < len(word_list):
+    if word_list[i].islower():
         lowers += 1
         i += 1
     else:
@@ -127,18 +128,18 @@ while i < len(analyzing):
 numerics = 0
 i = 0
 
-while i < len(analyzing):
-    if analyzing[i].isnumeric():
+while i < len(word_list):
+    if word_list[i].isnumeric():
         numerics += 1
         i += 1
     else:
         i += 1
 
-digits = analyzing.isnumeric()
+digits = word_list.isnumeric()
 digits = sum(str(digits))
 
 
-print ('You text chosen text has ' + str(capitals) + ' capitals, ' + str(uppers) + ' uppercases, ' + str(lowers) + ' lowercases, ' + str(numerics) + ' numbers' + 'sum of digits is ' + int(digits))
+print ('Your chosen text has ' + str(capitals) + ' capitals, ' + str(uppers) + ' uppercases, ' + str(lowers) + ' lowercases, ' + str(numerics) + ' numbers' + 'sum of digits is ' + int(digits))
 
 print()
 print('=' * 40)
