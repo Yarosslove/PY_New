@@ -1,14 +1,14 @@
 #from typing import Any
 
-print('Welcome in Text Analyzer)
+print('Welcome in Text Analyzer')
 print('=' * 40)
-print ('Author: Jaroslav Prejza)
+print ('Author: Jaroslav Prejza')
 print('=' * 40)
 credentials = {'bob': '123','ann': 'pass123','mike': 'password123','liz': 'pass123'}
 
-username = input('Please enter username: \n')
+username = input('Please enter username: ')
 print()
-password = input('Please enter password: \n')
+password = input('Please enter password: ')
 print()
 print('=' * 40)
 
@@ -16,10 +16,10 @@ if username not in credentials:
     print('No user found')
     exit()
 elif credentials[username] != password:
-    print('permission denied')
+    print('Permission denied')
     exit()
 else:
-    print('permission allowed\n')
+    print('Permission allowed ')
     print()
 print('OUR TEXTS:') #????
 
@@ -54,7 +54,7 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.''')
 
 
-choice = int(input('We have 3 texts to analyze, please choose 1, 2 or 3:\n'))
+choice = int(input('We have 3 texts to analyze, please choose 1, 2 or 3: '))
 print()
 
 if choice not numeric:
@@ -90,56 +90,33 @@ word_list = word_list.split()
 
 # capitals
 capitals = 0
-i = 0
-
-while i < len(word_list):
-    if word_list[i].istitle():
-        capitals += 1
-        i += 1
-    else:
-        i += 1
-
-# uppercases
-
 uppers = 0
+lowers = 0       
+numerics = 0              
 i = 0
-
-while i < len(word_list):
-    if word_list[i].isupper():
+       
+for i in word_list:
+    if i in word_list.istitle():
+        capitals += 1
+    if i in word_list.isupper():
         uppers += 1
-        i += 1
-    else:
-        i += 1
-
-# lowercases
-
-lowers = 0
-i = 0
-
-while i < len(word_list):
-    if word_list[i].islower():
+    if i in word_list.islower():
         lowers += 1
-        i += 1
-    else:
-        i += 1
-
-# numerics
-
-numerics = 0
-i = 0
-
-while i < len(word_list):
-    if word_list[i].isnumeric():
+    if i in word_list.isnumeric():
         numerics += 1
-        i += 1
-    else:
-        i += 1
+       
 
+
+#SUM!!!!
 digits = word_list.isnumeric()
 digits = sum(str(digits))
 
 
-print ('Your chosen text has ' + str(capitals) + ' capitals, ' + str(uppers) + ' uppercases, ' + str(lowers) + ' lowercases, ' + str(numerics) + ' numbers' + 'sum of digits is ' + int(digits))
+print ('There are ' + str(capitals) + ' capitals, 
+print ('There are ' + str(uppers) + ' uppercases, ' 
+print ('There are ' + str(lowers) + ' lowercases, ' 
+print ('There are ' + str(numerics) + ' numbers' 
+#print ('Sum of digits is ' + int(digits))
 
 print()
 print('=' * 40)
@@ -148,5 +125,5 @@ print()
 print('1' + ' - ' + str(capitals) + capitals * ' *' )
 print('2' + ' - ' + str(uppers) + uppers * ' *' )
 print('3' + ' - ' + str(lowers) + lowers * ' *' )
-print('4' + ' - ' + str(numerics) + numberics * ' *' )
+print('4' + ' - ' + str(numerics) + numerics * ' *' )
 
