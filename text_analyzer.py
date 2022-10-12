@@ -1,6 +1,6 @@
 #from typing import Any
 
-print('Welcome in Text Analyzer')
+print('Welcome in BRANDNEW Text Analyzer')
 print('=' * 40)
 print ('Author: Jaroslav Prejza')
 print('=' * 40)
